@@ -1,10 +1,9 @@
 """Módulo donde definimos la clase Berry, que contendrá todas sus características"""
-from berries_attributes import get_berry_data
-
+from datetime import datetime
+from berries_data.berries_attributes import get_berry_data
 
 class Berry:
     "Clase que define las características de la baya"
-
     def __init__(self, name):
         self.name = name
         self.flavor = None
@@ -13,7 +12,7 @@ class Berry:
         self.description = None
         self.sprite = None
         self.growth_time = None
-
+        self.harvest_time = None
     def get_all(self):
         """Método para reunir la información de la baya"""
         all_data = get_berry_data(self.name)
@@ -23,4 +22,5 @@ class Berry:
         self.natural_gift_power = all_data[3]
         self.natural_gift_type = all_data[4]
         self.sprite = all_data[5]
-        return self.flavor, self.natural_gift_type, self.natural_gift_type, self.description, self.sprite, self.growth_time
+        self.harvest_time = self.growth_time + datetime.now().hour
+        return self.flavor, self.natural_gift_type, self.natural_gift_type, self.description, self.sprite, self.growth_time, self.harvest_time

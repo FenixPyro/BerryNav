@@ -1,6 +1,7 @@
 """Módulo para acceder a la url del item"""
 import requests
-from api_request import make_api_request
+from berries_data.api_request import make_api_request
+
 def get_berry_item_data(berry_name:str) -> str:
     """Función que devuelve la descripción de la baya"""
     try:

@@ -1,7 +1,7 @@
 """Módulo que reúne la información a utilizar de cada baya"""
 import requests
-from berries_item_data import get_berry_item_data
-from api_request import make_api_request
+from berries_data.berries_item_data import get_berry_item_data
+from berries_data.api_request import make_api_request
 
 def get_berry_data(berry_name:str)->list:
     """Función que reúne todos los sabores de la baya en un diccionario"""

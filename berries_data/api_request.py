@@ -1,6 +1,9 @@
+"""Módulo con la función que realiza la request de la API"""
 import requests
-from url_module import Url
+from berries_data.url_module import Url
+
 def make_api_request(berry_name):
+    """Función que hace la request y lo devuelve en formato json"""
     berry_url = Url(berry_name)
     url = berry_url.create_url()
     try:
