@@ -3,7 +3,7 @@ import requests
 from berries_data.api_request import make_api_request
 
 def get_berry_item_data(berry_name:str) -> str:
-    """Función que devuelve la descripción de la baya"""
+    """Función que devuelve la url de la baya como item"""
     try:
         berry_item_url = make_api_request(berry_name)["item"]["url"]
         berry_item_data = requests.get(berry_item_url, timeout = 5)

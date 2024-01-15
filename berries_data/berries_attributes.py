@@ -4,7 +4,7 @@ from berries_data.berries_item_data import get_berry_item_data
 from berries_data.api_request import make_api_request
 
 def get_berry_data(berry_name:str)->list:
-    """Función que reúne todos los sabores de la baya en un diccionario"""
+    """Función que reúne todos los datos de la baya en una tupla"""
     try:
         berry_data = make_api_request(berry_name)
         flavors_data = berry_data.get("flavors")
